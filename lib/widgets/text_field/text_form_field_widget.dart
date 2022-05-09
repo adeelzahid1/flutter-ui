@@ -27,8 +27,8 @@ class TextFormFieldWidget extends StatefulWidget {
 
 
   TextFormFieldWidget({
-    this.controller = null,
-    this.initalVal = null,
+    this.controller,
+    this.initalVal,
     this.isPassword = false,
     this.isEnable = true,
     this.hint = "",
@@ -47,7 +47,7 @@ class TextFormFieldWidget extends StatefulWidget {
     this.isDense = true,
     this.inputFormatters,
     this.readOnly=false,
-  }) : this.isShowPassword = isPassword
+  }) : isShowPassword = isPassword
             ? true
             : false; //:controller = controller ?? new TextEditingController();
 
@@ -66,24 +66,24 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         decoration: InputDecoration(
           //helperText: '',
           isDense: widget.isDense,
-          contentPadding: EdgeInsets.fromLTRB(14, 20, 10, 0),
+          contentPadding: const EdgeInsets.fromLTRB(14, 20, 10, 0),
           counterText: "",
           hintText: widget.hint,
           labelText: widget.label,
           focusColor: Theme.of(context).primaryColor,
           suffixIcon: widget.isPassword
               ? TextButton.icon(
-                  label: SizedBox.shrink(),
+                  label: const SizedBox.shrink(),
                   icon: widget.isShowPassword
-                      ? Icon(Icons.visibility)
-                      : Icon(Icons.visibility_off),
+                      ? const Icon(Icons.visibility)
+                      : const Icon(Icons.visibility_off),
                   onPressed: () {
                     setState(
                         () => widget.isShowPassword = !widget.isShowPassword);
                   },
                 )
               : null,
-          border: OutlineInputBorder(
+          border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           errorStyle: TextStyle(

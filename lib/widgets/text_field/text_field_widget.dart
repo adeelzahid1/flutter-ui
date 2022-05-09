@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatefulWidget {
 
-  String initalVal;
-  bool isPassword;
-  String hint;
-  String lable;
-  void Function(String)? onSave;
-  void Function(String?)? onChange;
-  TextInputType textInputType;
-  TextCapitalization textCapitalization;
-  int minLine ;
-  int maxLines;
-  bool isExpend ;
+  final String initalVal;
+  late final bool isPassword;
+  final String hint;
+  final String lable;
+  final void Function(String)? onSave;
+  final void Function(String?)? onChange;
+  final TextInputType textInputType;
+  final TextCapitalization textCapitalization;
+  final int minLine ;
+  final int maxLines;
+  final bool isExpend ;
 
 
   TextFieldWidget({

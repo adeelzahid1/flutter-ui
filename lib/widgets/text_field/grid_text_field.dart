@@ -24,10 +24,10 @@ class GridTextFormField extends StatefulWidget {
   bool? isDense;
 
   GridTextFormField({
-    this.maxWidth: double.infinity,
-    this.width: 50,
-    this.controller = null,
-    this.initalVal = null,
+    this.maxWidth= double.infinity,
+    this.width= 50,
+    this.controller,
+    this.initalVal,
     this.isPassword = false,
     this.isEnable = true,
     this.hint = "",
@@ -44,7 +44,7 @@ class GridTextFormField extends StatefulWidget {
     this.isExpend = false,
     this.errorColor = Colors.red,
     this.isDense = true,
-  }) : this.isShowPassword = isPassword
+  }) : isShowPassword = isPassword
       ? true
       : false; //:controller = controller ?? new TextEditingController();
 
@@ -64,7 +64,7 @@ class _TextFormFieldWidgetState extends State<GridTextFormField> {
         decoration: InputDecoration(
           //helperText: '',
           isDense: widget.isDense,
-          contentPadding: EdgeInsets.fromLTRB(5, 0, 10, 5),
+          contentPadding: const EdgeInsets.fromLTRB(5, 0, 10, 5),
           counterText: "",
           hintText: widget.hint,
           labelText: widget.label,
@@ -90,7 +90,7 @@ class _TextFormFieldWidgetState extends State<GridTextFormField> {
         maxLength: widget.maxLength,
         onTap: widget.onTap,
         onSaved: widget.onSave,
-        controller: widget.controller ?? null,
+        controller: widget.controller,
       ),
 
     );

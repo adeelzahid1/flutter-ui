@@ -29,8 +29,8 @@ class TextFormFieldPrefixIcon extends StatefulWidget {
 
 
   TextFormFieldPrefixIcon({
-    this.controller = null,
-    this.initalVal = null,
+    this.controller,
+    this.initalVal,
     this.isPassword = false,
     this.isEnable = true,
     this.hint = "",
@@ -51,7 +51,7 @@ class TextFormFieldPrefixIcon extends StatefulWidget {
     this.readOnly=false,
     this.prefixIcon,
     this.prefixIconColor,
-  }) : this.isShowPassword = isPassword
+  }) : isShowPassword = isPassword
       ? true
       : false; //:controller = controller ?? new TextEditingController();
 
@@ -71,24 +71,24 @@ class _TextFormFieldPrefixIconState extends State<TextFormFieldPrefixIcon> {
           //helperText: '',
           prefixIcon: Icon(widget.prefixIcon, color: widget.prefixIconColor,),
           isDense: widget.isDense,
-          contentPadding: EdgeInsets.fromLTRB(14, 20, 10, 0),
+          contentPadding: const EdgeInsets.fromLTRB(14, 20, 10, 0),
           counterText: "",
           hintText: widget.hint,
           labelText: widget.label,
           focusColor: Theme.of(context).primaryColor,
           suffixIcon: widget.isPassword
               ? TextButton.icon(
-            label: SizedBox.shrink(),
+            label: const SizedBox.shrink(),
             icon: widget.isShowPassword
-                ? Icon(Icons.visibility)
-                : Icon(Icons.visibility_off),
+                ? const Icon(Icons.visibility)
+                : const Icon(Icons.visibility_off),
             onPressed: () {
               setState(
                       () => widget.isShowPassword = !widget.isShowPassword);
             },
           )
               : null,
-          border: OutlineInputBorder(
+          border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           errorStyle: TextStyle(
@@ -109,7 +109,7 @@ class _TextFormFieldPrefixIconState extends State<TextFormFieldPrefixIcon> {
         maxLength: widget.maxLength,
         onTap: widget.onTap,
         onSaved: widget.onSave,
-        controller: widget.controller ?? null,
+        controller: widget.controller,
         inputFormatters: widget.inputFormatters,
         readOnly: widget.readOnly,
       ),
